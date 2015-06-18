@@ -18,11 +18,12 @@ module OmniAuth
         :city => 'http://axschema.org/contact/city/home',
         :state => 'http://axschema.org/contact/state/home',
         :website => 'http://axschema.org/contact/web/default',
-        :image => 'http://axschema.org/media/image/aspect11'
+        :image => 'http://axschema.org/media/image/aspect11',
+        :realm => 'http://axschema.org/intuit/realmId'
       }
 
       option :name, :open_id
-      option :required, [AX[:email], AX[:name], AX[:first_name], AX[:last_name], 'email', 'fullname', 'intuit/realmId']
+      option :required, [AX[:email], AX[:name], AX[:first_name], AX[:last_name], AX[:realm], 'email', 'fullname']
       option :optional, [AX[:nickname], AX[:city], AX[:state], AX[:website], AX[:image], 'postcode', 'nickname']
       option :store, ::OpenID::Store::Memory.new
       option :identifier, nil
